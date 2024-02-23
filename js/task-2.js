@@ -24,10 +24,10 @@ const images = [
     alt: "Zebras on Zebra",
   },
 ];
-const galeryListEl = document.querySelector(".gallery");
+const galleryListEl = document.querySelector(".gallery");
 
 const liEl = images
   .map((img) => `<li><img src='${img.url}' alt="${img.alt}" width="300"></li>`)
   .join("");
 
-galeryListEl.insertAdjacentHTML("beforeend", liEl);
+galleryListEl.insertAdjacentHTML("beforeend", liEl);

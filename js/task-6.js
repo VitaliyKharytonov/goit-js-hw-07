@@ -10,8 +10,9 @@ const createBtnEl = document.querySelector("[data-create]");
 const destroyBtnEl = document.querySelector("[data-destroy]");
 
 createBtnEl.addEventListener("click", (event) => {
-  if (inputEl.value >= 1 && inputEl.value <= 100) {
-    createBoxes(inputEl.value);
+  const valueInputEl = Number(inputEl.value);
+  if (valueInputEl >= 1 && valueInputEl <= 100) {
+    createBoxes(valueInputEl);
   }
   inputEl.value = "";
 });
@@ -22,15 +23,15 @@ destroyBtnEl.addEventListener("click", (event) => {
 
 function createBoxes(amount) {
   boxesEl.innerHTML = "";
-  const box = [];
+  const collectionBlock = [];
   let boxsize = 30;
   for (let i = 0; i < amount; i++) {
     const div = `<div style="background-color: ${getRandomHexColor()};width: ${boxsize}px;height: ${boxsize}px"></div>`;
-    box.push(div);
+    collectionBlock.push(div);
     boxsize += 10;
   }
-  const boxEl = box.join("");
-  boxesEl.insertAdjacentHTML("beforeend", boxEl);
+  const blockEl = collectionBlock.join("");
+  boxesEl.insertAdjacentHTML("beforeend", blockEl);
 }
 
 function destroyBoxes() {

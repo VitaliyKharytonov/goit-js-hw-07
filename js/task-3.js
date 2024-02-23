@@ -2,10 +2,10 @@ const imputEl = document.querySelector("#name-input");
 const spanEl = document.querySelector("#name-output");
 
 imputEl.addEventListener("input", (event) => {
-  console.dir(event.currentTarget.value);
-  if (event.currentTarget.value.trim() === "") {
+  const trimmedValue = event.currentTarget.value.trim();
+  if (trimmedValue === "") {
     spanEl.textContent = "Anonymous";
   } else {
-    spanEl.textContent = event.currentTarget.value;
+    spanEl.textContent = trimmedValue;
   }
 });
